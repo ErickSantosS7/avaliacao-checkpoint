@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:usedev_uninassau/src/widgets/banner_hero_widget.dart';
+import 'package:usedev_uninassau/src/widgets/product_card_widget.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});
@@ -42,7 +43,21 @@ class _InitialScreenState extends State<InitialScreen> {
                     ),
                   ),
                   SizedBox(height: 12),
-
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 3,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          ProductCardWidget(
+                            nome: 'Camisa Capy $index',
+                            url: 'https://placehold.co/600x400/png',
+                            preco: '28,00',
+                          ),
+                        ],
+                      );
+                    },
+                  ),
                   SizedBox(height: 20),
                 ],
               ),
